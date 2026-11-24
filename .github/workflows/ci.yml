@@ -39,10 +39,9 @@ jobs:
     - name: Build and push Docker image
       uses: mr-smithers-excellent/docker-build-push@v7
       with:
+        image: binoykumarsutradhar/demo-app
         registry: docker.io
-        image: ${{ secrets.DOCKERHUB_USERNAME }}/java-ci-demo
-        tags: latest
-        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
 
     # NOTE: The Gradle Wrapper is the default and recommended way to run Gradle (https://docs.gradle.org/current/userguide/gradle_wrapper.html).
